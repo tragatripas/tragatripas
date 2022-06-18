@@ -1,0 +1,25 @@
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www.)?norfipc.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www.)?google.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www.)?bing.com [NC]
+#RewriteCond %{HTTP_HOST} !^www\..+$ [NC]
+#RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+#RewriteCond %{THE_REQUEST} \.php
+#RewriteRule ^(.*)\.php(.*)$ /$1$2 [R=301,L]
+#Permitir acceso por URL
+RewriteCond %{HTTP_REFERER} !^$
+#Permitir acceso buscadores
+RewriteCond %{HTTP_REFERER} !google. [NC]
+RewriteCond %{HTTP_REFERER} !search?q=cache [NC]
+RewriteCond %{HTTP_REFERER} !msn. [NC]
+SetEnvIfNoCase user-Agent ^FrontPage [NC,OR]
+SetEnvIfNoCase user-Agent ^Java.* [NC,OR]
+SetEnvIfNoCase user-Agent ^Microsoft.URL [NC,OR]
+SetEnvIfNoCase user-Agent ^MSFrontPage [NC,OR]
+SetEnvIfNoCase user-Agent ^Offline.Explorer [NC,OR]
+SetEnvIfNoCase user-Agent ^[Ww]eb[Bb]andit [NC,OR]
+SetEnvIfNoCase user-Agent ^Zeus [NC]
+Order Allow,Deny
+Allow from all
+Deny from env=bad_bot 
+ErrorDocument 404 /murphismagic.eu/error404.php
