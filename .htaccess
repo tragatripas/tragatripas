@@ -22,4 +22,12 @@ SetEnvIfNoCase user-Agent ^Zeus [NC]
 Order Allow,Deny
 Allow from all
 Deny from env=bad_bot 
-ErrorDocument 404 /murphismagic.eu/error404.php
+ErrorDocument 404 http://localhost/murphismagic.eu/error404
+RewriteRule ^carrito$ /carrito.php
+RewriteRule ^procesarpago$ /procesarpago.php
+RewriteRule ^fast50$ /fast50.php
+RewriteRule ^promo$ /promo.php
+RewriteRule ^index$ /index.php
+RewriteRule ^mispedidos$ /mispedidos.php
+RewriteRule ^error404$ /error404.php
+RewriteRule ^mante$ /mante.php

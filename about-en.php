@@ -211,7 +211,7 @@ foreach($_SESSION['arrcarrito'] as $pro){
             <i class="fas fa-check i_avisos"></i>
             <label for="" class="l_avisos">Product added to cart</label>
         </div>
-        
+        <!--
         <div class="div_conten_micuenta" id="div_conten_micuenta">
             <div class="div_micuenta" id="div_micuenta">
                <label for="" class="cerrar_micuenta" id="cerrar_micuenta"><i class="fas fa-times"></i></label>
@@ -310,7 +310,7 @@ foreach($_SESSION['arrcarrito'] as $pro){
                 </div>
                 
             </div>
-        </div>
+        </div>-->
         
     </div>
     
